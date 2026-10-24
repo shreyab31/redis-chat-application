@@ -28,7 +28,7 @@ class JoinRoomTest {
         String userName = "user1";
         when(chatService.joinRoom(roomId, userName)).thenReturn(true);
 
-        String jsonRequest = "{\"participantName\":\"" + userName + "\"}";
+        String jsonRequest = "{\"participant\":\"" + userName + "\"}";
 
         mockMvc.perform(post("/api/chatapp/chatrooms/" + roomId + "/join")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -45,7 +45,7 @@ class JoinRoomTest {
         String userName = "user1";
         when(chatService.joinRoom(roomId, userName)).thenReturn(false);
 
-        String jsonRequest = "{\"participantName\":\"" + userName + "\"}";
+        String jsonRequest = "{\"participant\":\"" + userName + "\"}";
 
         mockMvc.perform(post("/api/chatapp/chatrooms/" + roomId + "/join")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -59,7 +59,7 @@ class JoinRoomTest {
     @Test
     void testJoinRoomInvalidInput() throws Exception {
         String roomId = "testRoom";
-        String jsonRequest = "{\"participantName\":\"\"}";
+        String jsonRequest = "{\"participant\":\"\"}";
 
         mockMvc.perform(post("/api/chatapp/chatrooms/" + roomId + "/join")
                 .contentType(MediaType.APPLICATION_JSON)

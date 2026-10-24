@@ -4,13 +4,13 @@ import jakarta.validation.constraints.NotBlank;
 
 public class JoinRequest {
     @NotBlank(message = "Participant name is required")
-    private String participantName;
+    private String participant;
 
-    public String getParticipantName() {
-        return participantName;
+    public String getParticipant() {
+        return participant;
     }
 
-    public void setParticipantName(String participantName) {
-        this.participantName = participantName;
+    public void setParticipant(String participant) {
+        this.participant = participant;
     }
 }

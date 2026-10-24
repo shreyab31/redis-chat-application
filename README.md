@@ -23,7 +23,7 @@ A Spring Boot REST API for managing real-time chat rooms using Redis.
 
 ### 2. Join Chat Room
 - **Endpoint**: `POST /api/chatapp/chatrooms/{roomId}/join`
-- **Request**: `{"participantName": "string"}`
+- **Request**: `{"participant": "string"}`
 - **Responses**:
     - `200 OK`: `{"message": "...", "roomId": "...", "status": "success"}`
     - `404 Not Found`: `{"message": "Room not found", "roomId": "...", "status": "error"}`
@@ -38,11 +38,12 @@ A Spring Boot REST API for managing real-time chat rooms using Redis.
     - `400 Bad Request`: Validation error response.
 
 ### 4. Retrieve Message History
-- **Endpoint**: `GET /api/chatapp/chatrooms/{roomId}/messages?limit=N`
+- **Endpoint**: `GET /api/chatapp/chatrooms/{roomId}/messages`
+- **Request Param**: `limit` (1-100, default 10)
 - **Responses**:
     - `200 OK`: `{"messages": [ { "participant": "...", "message": "...", "timestamp": "..." }, ... ]}`
     - `404 Not Found`: Room does not exist.
-    - `400 Bad Request`: Invalid limit (must be 1-100).
+    - `400 Bad Request`: Invalid limit.
 
 ## Setup & Configuration
 

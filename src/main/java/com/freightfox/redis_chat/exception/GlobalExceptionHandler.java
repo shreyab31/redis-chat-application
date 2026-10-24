@@ -1,15 +1,12 @@
 package com.freightfox.redis_chat.exception;
 
-import com.freightfox.redis_chat.dto.JoinResponse;
-import com.freightfox.redis_chat.dto.RoomResponse;
-import com.freightfox.redis_chat.dto.MessageResponse;
+import java.util.stream.Collectors;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

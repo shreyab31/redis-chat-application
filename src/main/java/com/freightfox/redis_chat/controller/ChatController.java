@@ -48,10 +48,10 @@ public class ChatController {
 
     @PostMapping("/chatrooms/{roomId}/join")
     public ResponseEntity<JoinResponse> joinRoom(@PathVariable String roomId, @Valid @RequestBody JoinRequest request) {
-        boolean joined = chatService.joinRoom(roomId, request.getParticipantName());
+        boolean joined = chatService.joinRoom(roomId, request.getParticipant());
         if (joined) {
             return ResponseEntity.ok(new JoinResponse(
-                "Participant '" + request.getParticipantName() + "' joined room '" + roomId + "' successfully.",
+                "Participant '" + request.getParticipant() + "' joined room '" + roomId + "' successfully.",
                 roomId,
                 "success"
             ));
