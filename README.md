@@ -1,4 +1,4 @@
-# FreightFox Redis Chat Application
+# Redis Chat Application
 
 A Spring Boot REST API for managing real-time chat rooms using Redis.
 
